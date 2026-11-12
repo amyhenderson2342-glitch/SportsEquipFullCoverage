@@ -4,6 +4,7 @@ import Base from './baseSE.js';
 
 class SortMenu extends Base {
     
+        
     get sortSelected () {
         return $('#sort-selected-text');
     }
@@ -16,6 +17,12 @@ class SortMenu extends Base {
         return $$('#active-sort-label');
     }
 
+    get openMenuSelected () {
+        return $('div.sort-option.selected');
+    }
+    dropOptions (options){
+        return $(`//div[@data-sort="${options}"]`);
+    }
     sortData={
         options: ["default", "price-asc", "price-desc", "name-asc", "name-desc", "on-sale", "new"],
         results: ["Featured", "Price: Low to High", "Price: High to Low", "Name: A → Z", "Name: Z → A", "On sale", "New arrivals"],

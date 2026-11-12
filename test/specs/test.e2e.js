@@ -9,6 +9,8 @@ describe('Dropdown selection', () => {
             await SortMenu.dropdown(SortMenu.sortData.options[i])
             await expect(SortMenu.sortSelected).toHaveText(SortMenu.sortData.results[i])
             await expect(SortMenu.sortLabel).toHaveText(SortMenu.sortData.results2[i])
+            await SortMenu.sortSelected.click();
+            await expect(SortMenu.openMenuSelected).toHaveText(SortMenu.sortData.results[i], '::after'); 
         }
     })
 })
